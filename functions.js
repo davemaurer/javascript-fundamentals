@@ -16,7 +16,20 @@ function printThis () {
 
 // named function expression: The function name is not available outside of the function, so the global
 // scope in this case will not have access to foo. This type of function is useful for recursion.
+// naming functions helps with debugging, as the name shows up on the call stack.
 var func = function foo () {
   console.log(typeof foo);
 }
 
+// immediately invoked function expression (IIFE): Wrapped in parens, the outside parens can invoke the enclosed
+// function without the need to execute it. Applications include hiding infomation via the module pattern.
+// The return value of an IIFE can itself be a function.
+var foo = (function () {
+  return 'bar';
+})();
+
+// function constructor: Older pattern and should be avoided.
+// they do not have access to variables inside of their closing scope.
+var FC = new Function('arg1', 'arg2', 'console.log(arg1 + ", " + arg2)');
+// can also be declared without the word new
+var FC = Function('arg1', 'arg2', 'console.log(arg1 + ", " + arg2)');
