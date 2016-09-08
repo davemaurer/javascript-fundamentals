@@ -85,7 +85,7 @@ Story.prototype.summarize = function () {
 
 var sadStory = new Story('everyone dies', 'unlucky person', 'mean person');
 
-sadStory.summarize
+sadStory.summarize();
 
 /*
  The above is almost always the best choice when using a constructor. You can also assign functions/methods to
@@ -108,4 +108,52 @@ loses the ability to determine type. Dot notation is usually preferable for debu
   */
 
 
+// DYNAMIC PROTOTYPE pattern
 
+function Story (plot, protagonist, antagonist) {
+  this.plot        = plot;
+  this.antagonist  = antagonist;
+  this.protagonist = protagonist;
+
+  if ( typeof this.summarize !== 'function' ) {
+    Story.prototype.summarize = function () {
+        console.log('This is a story about the hero ' + protagonist + ' and the villain '
+              + antagonist + ' where they ' + plot + '.');
+    };
+  }
+};
+
+var sadStory = new Story('everyone dies', 'unlucky person', 'mean person');
+var happyStory = new Story('everyone becomes friends', 'friendly person', 'lonely person');
+
+sadStory.summarize();
+
+/*
+ The Dynamic Prototype pattern encapsulates all information needed within a constructor, and has unique
+instance properties as well as shared prototypal properties and methods.
+  */
+
+
+// OLOO Pattern
+var Story = {
+  init: function (hero, villain, ending) {
+    this.hero =    hero;
+    this.villain = villain;
+    this.ending =  ending;
+  },
+  sayCar: function() {
+    console.log('This is the story of ' + hero + ' and ' + villain + ' that ends ' + ending '.');
+  }
+};
+
+var sadStory = Object.create(Story)
+var happyStory = Object.create(Story)
+
+sadStory.init('goodguy', 'badguy', 'badly');
+happyStory.init('friendly girl', 'lonely girl', 'well');
+
+/*
+ The OLOO pattern, short for OBJECTS LINKED TO OTHER OBJECTS, created by Kyle Simpson, simplifies the previous,
+more class-based design patterns aboveby creating objects direclty from other objects, eschewing constructor
+functions.
+  */
