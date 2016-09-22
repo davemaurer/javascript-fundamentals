@@ -1,5 +1,12 @@
-// Functions can be named and unnamed
+/*
+Function objects in JavaScript are first class. This means they may:
+- Be passed as an argument to another function
+- Be returned from a function
+- Be assigned to a variable
+- Be stored in an object or array
+ */
 
+// Functions can be named and unnamed
 
 // function expression, alse anonymous: Function name is optional (as in this example without one). The variable is
 // hoisted, it's value is not, so defining after declaration will not work in this case.
