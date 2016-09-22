@@ -146,8 +146,8 @@ var Story = {
   }
 };
 
-var sadStory = Object.create(Story)
-var happyStory = Object.create(Story)
+var sadStory = Object.create(Story);
+var happyStory = Object.create(Story);
 
 sadStory.init('goodguy', 'badguy', 'badly');
 happyStory.init('friendly girl', 'lonely girl', 'well');
