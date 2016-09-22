@@ -142,7 +142,7 @@ var Story = {
     this.ending =  ending;
   },
   sayCar: function() {
-    console.log('This is the story of ' + hero + ' and ' + villain + ' that ends ' + ending '.');
+    console.log('This is the story of ' + hero + ' and ' + villain + ' that ends ' + ending + '.');
   }
 };
 
@@ -154,6 +154,6 @@ happyStory.init('friendly girl', 'lonely girl', 'well');
 
 /*
  The OLOO pattern, short for OBJECTS LINKED TO OTHER OBJECTS, created by Kyle Simpson, simplifies the previous,
-more class-based design patterns aboveby creating objects direclty from other objects, eschewing constructor
+more class-based design patterns above by creating objects directly from other objects, eschewing constructor
 functions.
   */
