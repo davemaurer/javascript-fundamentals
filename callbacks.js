@@ -2,6 +2,11 @@
 A callback is a function passed to another function as an argument.
  */
 
+/* Reference:
+ https://www.youtube.com/watch?v=qN0dkXj7jc0
+ https://www.quora.com/What-is-a-simple-explanation-of-higher-order-functions-and-callbacks-in-JavaScript
+ */
+
 var add = function(thing1, thing2) {
   return thing1 + thing2
 };
@@ -44,7 +49,9 @@ dogs.map(mapTheDogs);
 Callbacks can also be part of callback hooks.
  */
 
-var img = Image.new(blah blah);
-img.onload(function() {
-  Do some stuff to the image
+images.forEach(function (image) {
+  var img = new Image();
+  img.onload = function () { // this function <--- back at the line beginning is the callback hook
+    doSomeStuffToThe image;
+  }
 });
