@@ -8,11 +8,11 @@ Function objects in JavaScript are first class. This means they may:
 
 // Functions can be named and unnamed
 
-// function expression, alse anonymous: Function name is optional (as in this example without one). The variable is
-// hoisted, it's value is not, so defining after declaration will not work in this case.
+// function expression, also anonymous: Function name is optional (as in this example without one). The variable is
+// hoisted, it's value is not, so defining after execution will not work in this case.
 var printThis = function () {
   console.log('This');
-}
+};
 
 // function delcaration: They are hoisted, so the function call can happen
 // before the function is declared. Delcarations cannot be defined inside of
@@ -26,10 +26,10 @@ function printThis () {
 // naming functions helps with debugging, as the name shows up on the call stack.
 var func = function foo () {
   console.log(typeof foo);
-}
+};
 
 // immediately invoked function expression (IIFE): Wrapped in parens, the outside parens can invoke the enclosed
-// function without the need to execute it. Applications include hiding infomation via the module pattern.
+// function without the need to execute it. Applications include hiding information via the module pattern.
 // The return value of an IIFE can itself be a function.
 var foo = (function () {
   return 'bar';
