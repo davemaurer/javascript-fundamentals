@@ -27,6 +27,19 @@ console.log(mashTogether('Hello', ' there!', function(hello, there) {
 }));
 // Gives us => Hello there! You awesome person you!
 
+
+// Callbacks are used in many JavaScript built in functions, such as map.
+var dogs = ['Rex', 'Daisy', 'Fido'];
+dogs.map(function(x) {
+  return x + ' is a good dog!'
+});
+// In the above example, the function passed in to map is a callback function. They are often broken out like this:
+mapTheDogs = function(dog) {
+  return dog + ' is cool.'
+};
+// Now we can use map with our mapTheDogs function expression as the callback:
+dogs.map(mapTheDogs);
+
 /*
 Callbacks can also be part of callback hooks.
  */
