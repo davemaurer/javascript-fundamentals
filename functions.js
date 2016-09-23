@@ -14,8 +14,8 @@ var printThis = function () {
   console.log('This');
 };
 
-// function delcaration: They are hoisted, so the function call can happen
-// before the function is declared. Delcarations cannot be defined inside of
+// function declaration: They are hoisted, so the function call can happen
+// before the function is defined. Declarations cannot be defined inside of
 // conditional statements or loops.
 function printThis () {
   console.log('This');
