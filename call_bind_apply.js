@@ -58,3 +58,17 @@ logName.call(person); // will invoke the logName function we created above and b
 
 logName.call(person, "arg1", "arg2");
 
+// Using apply()
+
+// apply() is used just like call(), but the arguments other than what you want 'this' bound to are expected in an array. So
+// the object that will be bound to 'this' is still by itself, and anything else passed to the function needs to be in an array.
+// Like this:
+
+logName.apply(person, ["arg1", "arg2"]);
+
+// If you want to use call() or apply() immediately, you can use an IIFE
+
+(function(arg1, arg2) {
+  console.log("Logged using immediate binding with apply(): " + this.getFullName());
+
+}).apply(person, ["this", "that"]); // or .call(person, "this", "that")
