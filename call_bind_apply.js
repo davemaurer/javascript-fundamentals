@@ -6,6 +6,10 @@
 // anonymous/optional, a CODE property that contains the invocable code inside the function, and all functions also
 // get access to BUILT IN functions/methods. call, bind, and apply are three of them.
 
+// Using bind()
+// bind() is chained on to the end of a function (just the function, not a function call/invocation) to explicitly tell
+// JavaScript what 'this' is when looking at properties.
+
 var person = {
   firstname: "John",
   lastname: "Doe",
@@ -42,3 +46,15 @@ var logNameDirectly = function(arg1, arg2) {
 }.bind(person)
 
 logNameDirectly();
+
+// Using call()
+
+// call() works just like using () to invoke a function, so unlike bind() which sets 'this' without invoking a function,
+// call() actually invokes the function as it binds 'this' to an object.
+
+logName.call(person); // will invoke the logName function we created above and bind the person object to 'this' at the same time.
+
+// when using call() with arguments, the object you want 'this' bound to is always the first argument in the list.
+
+logName.call(person, "arg1", "arg2");
+
