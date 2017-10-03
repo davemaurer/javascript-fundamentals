@@ -34,3 +34,11 @@ var logPersonName = logName.bind(person);
 
 logPersonName();
 
+// You can also bind an object to 'this' directly when declaring a function, like this:
+
+var logNameDirectly = function(arg1, arg2) {
+  console.log("Logged using immediate binding: " + this.getFullName());
+
+}.bind(person)
+
+logNameDirectly();
