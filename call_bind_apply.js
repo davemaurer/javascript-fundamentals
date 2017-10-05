@@ -66,6 +66,8 @@ logName.call(person, "arg1", "arg2");
 
 logName.apply(person, ["arg1", "arg2"]);
 
+// When using apply(), arguments in the array are used just like an argument list, so first to last.
+
 // If you want to use call() or apply() immediately, you can use an IIFE
 
 (function(arg1, arg2) {
